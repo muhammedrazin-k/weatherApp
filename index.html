@@ -265,7 +265,6 @@
 
     const getData = async () => {
       try {
-        if (inputdata.value.length == 0) return;
         if (inputdata.value) {
           const data = inputdata.value;
 
@@ -294,7 +293,7 @@
               const result = await res.json();
               console.log(result);
 
-              if (result.cod == 404) {
+              if (Number(result.cod) !== 200) {
                 document.getElementById("display").classList.add("opacity-100");
                 document.getElementById(
                   "display"
@@ -331,7 +330,10 @@
               const date = new Date(
                 currentWeather.dt * 1000
               ).toLocaleDateString();
-              const city = data;
+              
+
+              const city=result.city.name
+              const country=result.city.country
 
               //card data
 
@@ -417,7 +419,7 @@
               autoplay
             ></dotlottie-player>
           </div>
-          <div id="weatherText" class="text-center -mt-20 sm:-mt-[120px] md:-mt-[150px] lg:-mt-[130px] text-white ">
+          <div id="weatherText" class="text-center -mt-20 sm:-mt-[120px] md:-mt-[150px] lg:-mt-[110px] text-white ">
             <h1 class="text-5xl sm:text-6xl text-white">${weatherTemp}°C</h1>
             <p>${weatherDes}</p>
             <div class="max-min d-flex justify-between m-auto w-[200px]">
@@ -426,7 +428,11 @@
             </div>
           </div>
 
-          <div class="weatherBox  mt-4 px-0 sm:px-10 text-white  py-3 mx-auto w-full sm:w-fit" >
+          <div class="weatherBox  mt-1 px-0 sm:px-10 text-white  py-3 mx-auto w-full sm:w-fit" >
+            <div class="date d-flex text-center justify-between px-10">
+              <p>${city}</p>
+             
+            </div>
             <div class="date d-flex text-center justify-between px-10">
               <p>Today</p>
              
