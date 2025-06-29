@@ -419,7 +419,7 @@
               autoplay
             ></dotlottie-player>
           </div>
-          <div id="weatherText" class="text-center -mt-20 sm:-mt-[120px] md:-mt-[150px] lg:-mt-[110px] text-white ">
+          <div id="weatherText" class="text-center -mt-20 sm:-mt-[120px] md:-mt-[150px] lg:-mt-[160px] text-white ">
             <h1 class="text-5xl sm:text-6xl text-white">${weatherTemp}°C</h1>
             <p>${weatherDes}</p>
             <div class="max-min d-flex justify-between m-auto w-[200px]">
@@ -429,8 +429,9 @@
           </div>
 
           <div class="weatherBox  mt-1 px-0 sm:px-10 text-white  py-3 mx-auto w-full sm:w-fit" >
-            <div class="date d-flex text-center justify-between px-10">
-              <p>${city}</p>
+            <div class="date d-flex text-center  px-10">
+              <p class='mx-2'>${city}</p>
+              <p>${country}</p>
              
             </div>
             <div class="date d-flex text-center justify-between px-10">
