@@ -266,8 +266,9 @@
     const getData = async () => {
       try {
         if (inputdata.value) {
-          const data = inputdata.value;
-
+          const data = inputdata.value.trim();
+          if(!data) return
+          
           document.getElementById("display").innerHTML = `
           <div class="mx-auto mt-32">
           
